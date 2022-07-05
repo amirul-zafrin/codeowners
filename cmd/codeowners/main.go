@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/hmarr/codeowners"
+	"github.com/dicksontung/codeowners"
 	"github.com/karrick/godirwalk"
 	flag "github.com/spf13/pflag"
 )

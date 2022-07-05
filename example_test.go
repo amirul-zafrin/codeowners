@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/hmarr/codeowners"
+	"github.com/dicksontung/codeowners"
 )
 
 func Example() {

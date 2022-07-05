@@ -75,7 +75,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hmarr/codeowners"
+	"github.com/dicksontung/codeowners"
 )
 
 func main() {

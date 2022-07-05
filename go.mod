@@ -1,4 +1,4 @@
-module github.com/hmarr/codeowners
+module github.com/dicksontung/codeowners
 
 go 1.14
 
