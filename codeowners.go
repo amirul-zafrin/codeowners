@@ -139,6 +139,8 @@ const (
 	TeamOwner string = "team"
 	// UsernameOwner is the owner type for GitHub usernames.
 	UsernameOwner string = "username"
+	// ServiceOwner is the owner type for GitHub usernames.
+	ServiceOwner string = "service"
 )
 
 // Owner represents an owner found in a rule.

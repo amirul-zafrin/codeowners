@@ -1,4 +1,4 @@
-module github.com/dicksontung/codeowners
+module github.com/amirul-zafrin/codeowners
 
 go 1.14
 

@@ -39,14 +39,23 @@ func TestParseRule(t *testing.T) {
 			},
 		},
 		{
+			name: "service owners",
+			rule: "file.txt @project_service_0990",
+			expected: Rule{
+				pattern: mustBuildPattern(t, "file.txt"),
+				Owners:  []Owner{{Value: "project_service_0990", Type: "service"}},
+			},
+		},
+		{
 			name: "multiple owners",
-			rule: "file.txt @user @org/team foo@example.com",
+			rule: "file.txt @user @org/team foo@example.com @project_service_0990",
 			expected: Rule{
 				pattern: mustBuildPattern(t, "file.txt"),
 				Owners: []Owner{
 					{Value: "user", Type: "username"},
 					{Value: "org/team", Type: "team"},
 					{Value: "foo@example.com", Type: "email"},
+					{Value: "project_service_0990", Type: "service"},
 				},
 			},
 		},

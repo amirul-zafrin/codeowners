@@ -13,6 +13,7 @@ var (
 	emailRegexp    = regexp.MustCompile(`\A[A-Z0-9a-z\._%\+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,6}\z`)
 	teamRegexp     = regexp.MustCompile(`\A@([a-zA-Z0-9\-]+\/[a-zA-Z0-9_\-]+)\z`)
 	usernameRegexp = regexp.MustCompile(`\A@([a-zA-Z0-9\-\.]+[a-zA-Z0-9\-]+)\z`)
+	serviceRegexp  = regexp.MustCompile(`\A@([a-zA-Z0-9\-\._]+)\z`)
 )
 
 const (
@@ -157,6 +158,11 @@ func newOwner(s string) (Owner, error) {
 	match = usernameRegexp.FindStringSubmatch(s)
 	if match != nil {
 		return Owner{Value: match[1], Type: UsernameOwner}, nil
+	}
+
+	match = serviceRegexp.FindStringSubmatch(s)
+	if match != nil {
+		return Owner{Value: match[1], Type: ServiceOwner}, nil
 	}
 
 	return Owner{}, fmt.Errorf("invalid owner format '%s'", s)
